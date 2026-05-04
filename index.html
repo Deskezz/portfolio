@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>ИИ-автоматизатор | Портфолио</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;900&family=IBM+Plex+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Открыть меню" aria-expanded="false">☰</button>
+    <div class="container">
+        <nav class="sidebar">
+            <ul class="nav-list">
+                <li class="nav-item active" data-section="about">Обо мне</li>
+                <li class="nav-item" data-section="tools">Подход</li>
+                <li class="nav-item" data-section="projects">Проекты</li>
+                <li class="nav-item" data-section="contacts">Контакты</li>
+            </ul>
+        </nav>
+
+        <main class="content">
+            <section id="about" class="section active">
+                <h1>Автоматизатор и ИИ разработчик</h1>
+                <p>Строю автоматизации, которые заменяют ручные процессы end-to-end: от сбора данных и логики до генерации контента и интеграций с API.</p>
+                <p>Фокус: скорость запуска, измеримый результат и рабочие решения без лишней сложности.</p>
+                <p>Помогаю запустить полный AI-контур: парсинг и структурирование данных, разработка приложений и веб-сайтов, автоматизации процессов, генерация контента и другие AI-решения под задачу.</p>
+
+                <div class="about-metrics">
+                    <article class="metric-card">
+                        <span class="metric-value">30-70%</span>
+                        <p>сокращение ручной операционки в типичных процессах</p>
+                    </article>
+                    <article class="metric-card">
+                        <span class="metric-value">1-5 дней</span>
+                        <p>до первого рабочего MVP-автоматизации</p>
+                    </article>
+                    <article class="metric-card">
+                        <span class="metric-value">Актуальный AI-стек</span>
+                        <p>Работаю с современными LLM и инструментами автоматизации: OpenAI, n8n, Playwright, API-интеграции и custom code.</p>
+                    </article>
+                </div>
+            </section>
+
+            <section id="tools" class="section">
+                <h1>Как я работаю</h1>
+                <div class="approach-grid">
+                    <article class="approach-item">
+                        <h3>01. Разбор процесса</h3>
+                        <p>Фиксирую bottlenecks, точки потерь времени и то, что реально можно автоматизировать без риска для качества.</p>
+                    </article>
+                    <article class="approach-item">
+                        <h3>02. Быстрый MVP</h3>
+                        <p>Собираю рабочий поток на реальных данных: триггеры, бизнес-правила, внешние API, валидация и логирование.</p>
+                    </article>
+                    <article class="approach-item">
+                        <h3>03. AI-слой</h3>
+                        <p>Добавляю LLM там, где нужен смысл: классификация, генерация, дедупликация, обработка неструктурированных данных.</p>
+                    </article>
+                    <article class="approach-item">
+                        <h3>04. Стабилизация</h3>
+                        <p>Делаю ретраи, rate-limit, мониторинг и понятные ручки управления, чтобы автоматизация жила в проде, а не только на демо.</p>
+                    </article>
+                </div>
+            </section>
+
+            <section id="projects" class="section">
+                <h1>Проекты</h1>
+
+                <div class="project-category-toggle">
+                    <button class="category-btn active" data-category="automations">Автоматизации</button>
+                    <button class="category-btn" data-category="websites">Веб-сайты</button>
+                </div>
+
+                <div class="project-content" id="automations-content">
+                    <div class="project-list">
+                        <div class="project-sidebar">
+                            <div class="project-item active" data-project="hhautootklik">
+                                <h3>HH Auto-отклик</h3>
+                                <p>Автоотклики с дедупликацией, AI-письмами и обработкой анкет через браузерную автоматизацию.</p>
+                            </div>
+                            <div class="project-item" data-project="telegrambot">
+                                <h3>Telegram AI Bot</h3>
+                                <p>Бот с режимами генерации изображений и видео, управлением состояниями и обработкой команд.</p>
+                            </div>
+                            <div class="project-item" data-project="autopost">
+                                <h3>Автопостинг Афиша</h3>
+                                <p>Мульти-источниковый парсинг, AI-дедупликация, генерация постов и автопубликация в Telegram.</p>
+                            </div>
+                        </div>
+                        <div class="workflow-canvas-container">
+                            <div class="workflow-hint">Двойной клик по ноде для деталей</div>
+                            <div id="workflowCanvas" class="workflow-canvas">
+                                <svg class="workflow-connections"></svg>
+                                <div class="workflow-nodes"></div>
+                            </div>
+                            <div class="workflow-controls">
+                                <button class="workflow-btn" id="zoomIn">+</button>
+                                <button class="workflow-btn" id="zoomOut">−</button>
+                                <button class="workflow-btn" id="resetView">⟲</button>
+                            </div>
+                        </div>
+                        <div class="workflow-mobile-note">
+                            <h3>Визуализация скрыта на мобильных</h3>
+                            <p>На небольших экранах интерактивный canvas отключен для скорости и удобства. Полная схема доступна на десктопе.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-content" id="websites-content" style="display: none;">
+                    <div class="websites-grid">
+                        <div class="website-card">
+                            <div class="website-preview">
+                                <div class="gallery-container">
+                                    <img src="img/dashboard-1.png" alt="Dashboard Preview" class="gallery-image active" loading="lazy" decoding="async">
+                                    <img src="img/dashboard-2.png" alt="Dashboard Preview" class="gallery-image" loading="lazy" decoding="async">
+                                    <img src="img/dashboard-3.png" alt="Dashboard Preview" class="gallery-image" loading="lazy" decoding="async">
+                                    <img src="img/dashboard-4.png" alt="Dashboard Preview" class="gallery-image" loading="lazy" decoding="async">
+                                    <button class="gallery-nav prev">‹</button>
+                                    <button class="gallery-nav next">›</button>
+                                    <div class="gallery-dots">
+                                        <span class="dot active" data-index="0"></span>
+                                        <span class="dot" data-index="1"></span>
+                                        <span class="dot" data-index="2"></span>
+                                        <span class="dot" data-index="3"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="website-info">
+                                <h3>Dashboard</h3>
+                                <p>Интерфейс аналитики с упором на компактную визуализацию и удобную работу с данными.</p>
+                                <div class="website-tech">
+                                    <span class="tech-tag">React</span>
+                                    <span class="tech-tag">TypeScript</span>
+                                    <span class="tech-tag">Charts</span>
+                                </div>
+                                <a href="https://github.com/Deskezz/dashboard" class="website-link" target="_blank" rel="noopener noreferrer">Открыть проект →</a>
+                            </div>
+                        </div>
+
+                        <div class="website-card">
+                            <div class="website-preview">
+                                <div class="gallery-container">
+                                    <img src="img/onlinemagazin-1.png" alt="Online Shop Preview" class="gallery-image active" loading="lazy" decoding="async">
+                                    <img src="img/onlinemagazin-2.png" alt="Online Shop Preview" class="gallery-image" loading="lazy" decoding="async">
+                                    <img src="img/onlinemagazin-3.png" alt="Online Shop Preview" class="gallery-image" loading="lazy" decoding="async">
+                                    <img src="img/onlinemagazin-4.png" alt="Online Shop Preview" class="gallery-image" loading="lazy" decoding="async">
+                                    <img src="img/onlinemagazin-5.png" alt="Online Shop Preview" class="gallery-image" loading="lazy" decoding="async">
+                                    <img src="img/onlinemagazin-6.png" alt="Online Shop Preview" class="gallery-image" loading="lazy" decoding="async">
+                                    <button class="gallery-nav prev">‹</button>
+                                    <button class="gallery-nav next">›</button>
+                                    <div class="gallery-dots">
+                                        <span class="dot active" data-index="0"></span>
+                                        <span class="dot" data-index="1"></span>
+                                        <span class="dot" data-index="2"></span>
+                                        <span class="dot" data-index="3"></span>
+                                        <span class="dot" data-index="4"></span>
+                                        <span class="dot" data-index="5"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="website-info">
+                                <h3>Онлайн магазин</h3>
+                                <p>E-commerce интерфейс с каталогом, корзиной и гибкой структурой клиентского UI.</p>
+                                <div class="website-tech">
+                                    <span class="tech-tag">Next.js</span>
+                                    <span class="tech-tag">TypeScript</span>
+                                    <span class="tech-tag">Tailwind</span>
+                                </div>
+                                <a href="https://github.com/Deskezz/onlineShop" class="website-link" target="_blank" rel="noopener noreferrer">Открыть проект →</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="contacts" class="section">
+                <h1>Контакты</h1>
+                <div class="contacts-info">
+                    <p><strong>Email:</strong> <a href="mailto:deskezz228@gmail.com">deskezz228@gmail.com</a></p>
+                    <p><strong>Telegram:</strong> <a href="https://t.me/deskezz" target="_blank" rel="noopener noreferrer">@deskezz</a></p>
+                    <p><strong>GitHub:</strong> <a href="https://github.com/Deskezz" target="_blank" rel="noopener noreferrer">github.com/Deskezz</a></p>
+                    <a class="contact-cta" href="https://t.me/deskezz" target="_blank" rel="noopener noreferrer">Обсудить автоматизацию в Telegram →</a>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <div id="nodeModal" class="node-modal">
+        <div class="node-modal-content">
+            <button class="node-modal-close" id="closeModal">×</button>
+            <h2 id="modalNodeName">Node Name</h2>
+            <div class="node-modal-section">
+                <h3>Описание</h3>
+                <p id="modalNodeDescription">Node description</p>
+            </div>
+            <div class="node-modal-section">
+                <h3>Параметры</h3>
+                <p id="modalNodeParams">Node parameters</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="imageModal" class="image-modal">
+        <button class="image-modal-close" id="closeImageModal">×</button>
+        <button class="image-modal-nav prev" id="imageModalPrev">‹</button>
+        <button class="image-modal-nav next" id="imageModalNext">›</button>
+        <div class="image-modal-zoom-controls">
+            <button class="zoom-btn" id="zoomInBtn">+</button>
+            <button class="zoom-btn" id="zoomOutBtn">−</button>
+            <button class="zoom-btn" id="zoomResetBtn">⟲</button>
+        </div>
+        <div class="image-container" id="imageContainer">
+            <img src="" alt="Full size preview" id="modalImage">
+        </div>
+        <div class="image-modal-counter">
+            <span id="modalImageCounter">1 / 1</span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
